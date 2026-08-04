@@ -1,0 +1,50 @@
+.backToTopContainer {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 90;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 14px rgba(29, 44, 72, 0.25);
+  padding: 3px;
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.backToTopContainer:hover {
+  transform: translateY(-4px);
+}
+
+.innerCircle {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-dark-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.backToTopContainer:hover .innerCircle {
+  background-color: var(--color-gold);
+  color: var(--color-dark-blue);
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

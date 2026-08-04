@@ -1,0 +1,603 @@
+/* ==========================================
+   SGSS Hybrid Security — Landing Page Styles
+   ========================================== */
+
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* ---- HERO SECTION ---- */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  padding-top: 110px;
+  overflow: hidden;
+  background: var(--color-dark-blue);
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.heroBgImg {
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.55;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(29, 44, 72, 0.98) 0%,
+    rgba(29, 44, 72, 0.9) 45%,
+    rgba(29, 44, 72, 0.65) 75%,
+    rgba(29, 44, 72, 0.35) 100%
+  );
+}
+
+.heroWrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroContent {
+  width: 100%;
+  max-width: 860px;
+  padding-top: 60px;
+  padding-bottom: 100px;
+  animation: heroFadeIn 0.85s ease both;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.heroTitle {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 900;
+  color: var(--color-white);
+  line-height: 1.15;
+  letter-spacing: -1.2px;
+  margin-bottom: 24px;
+}
+
+.heroTitleAccent {
+  color: var(--color-gold);
+}
+
+.heroSubtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 760px;
+  margin-bottom: 36px;
+  line-height: 1.75;
+  font-weight: 400;
+  text-align: center;
+}
+
+.heroCtas {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 900;
+  color: var(--color-dark-blue);
+  background: var(--color-gold);
+  padding: 16px 32px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btnPrimary:hover {
+  background: var(--color-gold-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(254, 207, 49, 0.4);
+}
+
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-white);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 15px 28px;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition), border-color var(--transition);
+  cursor: pointer;
+}
+
+.btnSecondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: var(--color-white);
+}
+
+.btnPrimarySm {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--color-dark-blue);
+  background: var(--color-gold);
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.btnPrimarySm:hover {
+  background: var(--color-gold-hover);
+  transform: translateY(-2px);
+}
+
+/* ---- SECTION HEADERS ---- */
+.sectionHeader {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px;
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 900;
+  color: var(--color-dark-blue);
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.titleDivider {
+  height: 4px;
+  width: 60px;
+  background: var(--color-gold);
+  margin: 16px auto 0;
+  border-radius: 2px;
+}
+
+/* LIGHT HEADERS (Dark Backgrounds) */
+.sectionHeaderLight {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px;
+}
+
+.sectionTitleLight {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 900;
+  color: var(--color-white);
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.sectionSubtextLight {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 16px;
+  line-height: 1.7;
+}
+
+/* ---- SECTION 1: THE PROBLEM (REDESIGNED) ---- */
+.trustGapSection {
+  padding: 100px 0;
+  background: var(--color-bg);
+}
+
+.problemIntroText {
+  font-size: 1.15rem;
+  color: var(--color-dark);
+  line-height: 1.7;
+  margin-bottom: 48px;
+  text-align: center;
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 500;
+}
+
+/* 3 Question Cards Grid */
+.questionGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 48px;
+}
+
+@media (max-width: 900px) {
+  .questionGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.questionCard {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 36px 28px;
+  box-shadow: 0 10px 30px rgba(29, 44, 72, 0.08);
+  border: 1px solid rgba(29, 44, 72, 0.09);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.questionCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--color-gold);
+}
+
+.questionCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(29, 44, 72, 0.14);
+  border-color: rgba(254, 207, 49, 0.6);
+}
+
+.questionIconBox {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: rgba(29, 44, 72, 0.06);
+  color: var(--color-dark-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.questionCard:hover .questionIconBox {
+  background: var(--color-dark-blue);
+  color: var(--color-gold);
+}
+
+.questionText {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-dark-blue);
+  line-height: 1.45;
+}
+
+/* Conclusion Banner Box */
+.conclusionBanner {
+  background: var(--color-dark-blue);
+  color: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: 40px 48px;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.conclusionBanner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 3px;
+  background: var(--color-gold);
+}
+
+.conclusionQuoteText {
+  font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+  font-weight: 700;
+  line-height: 1.6;
+  color: var(--color-white);
+}
+
+.conclusionHighlight {
+  color: var(--color-gold);
+  font-weight: 800;
+}
+
+
+/* ---- SECTION 2: THE SOLUTION ---- */
+.secureTrackSection {
+  padding: 100px 0;
+  background: var(--color-dark-blue);
+}
+
+.solutionGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+@media (max-width: 900px) {
+  .solutionGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pillarCard {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-lg);
+  padding: 32px 26px;
+  transition: transform var(--transition), border-color var(--transition), background var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.pillarCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-gold);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.pillarHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-white);
+}
+
+.pillarIcon {
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.pillarDesc {
+  font-size: 0.98rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.65;
+}
+
+/* ---- SECTION 3: HOW IT WORKS ---- */
+.howHelpsSection {
+  padding: 100px 0;
+  background: var(--color-bg-section);
+}
+
+.howItWorksGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  position: relative;
+}
+
+@media (max-width: 992px) {
+  .howItWorksGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .howItWorksGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stepCard {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  box-shadow: 0 8px 24px rgba(29, 44, 72, 0.07);
+  border: 1px solid rgba(29, 44, 72, 0.08);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.stepCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(29, 44, 72, 0.12);
+  border-color: var(--color-gold);
+}
+
+.stepBadge {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--color-dark-blue);
+  color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(29, 44, 72, 0.18);
+}
+
+.stepTitle {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--color-dark-blue);
+  margin-bottom: 10px;
+}
+
+.stepDesc {
+  font-size: 0.95rem;
+  color: var(--color-dark);
+  line-height: 1.65;
+  opacity: 0.88;
+}
+
+/* ---- SECTION 4: WHY CHOOSE HYBRID? ---- */
+.featuresSection {
+  padding: 100px 0;
+  background: var(--color-bg);
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+@media (max-width: 900px) {
+  .featureGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.featureCard {
+  background: var(--color-bg-section);
+  border-radius: var(--radius-lg);
+  padding: 36px 28px;
+  border: 1px solid rgba(29, 44, 72, 0.08);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.featureCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-gold);
+}
+
+.featureIconContainer {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-dark-blue);
+  color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.featureCardTitle {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-dark-blue);
+  margin-bottom: 12px;
+}
+
+.featureCardDesc {
+  font-size: 0.98rem;
+  color: var(--color-dark);
+  line-height: 1.65;
+  opacity: 0.88;
+}
+
+/* ---- TRANSPARENCY / FORM SECTION ---- */
+.transparencySection {
+  padding: 100px 0;
+  background: var(--color-bg-section);
+  border-top: 1px solid rgba(29, 44, 72, 0.08);
+}
+
+.transparencyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .transparencyGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.transparencyColLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sectionTitleLeft {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 900;
+  color: var(--color-dark-blue);
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.bodyTextLeft {
+  font-size: 1.05rem;
+  color: var(--color-dark);
+  line-height: 1.7;
+}
+
+.questionBox {
+  background: var(--color-white);
+  border-left: 4px solid var(--color-gold);
+  padding: 20px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.questionText {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-dark-blue);
+  font-style: italic;
+}
+
+.btnGoldAction {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--color-dark-blue);
+  background: var(--color-gold);
+  padding: 16px 28px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+  text-transform: uppercase;
+}
+
+.btnGoldAction:hover {
+  background: var(--color-gold-hover);
+  transform: translateY(-2px);
+}
