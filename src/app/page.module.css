@@ -302,33 +302,6 @@
 }
 
 
-.heroScrollDot::after {
-  content: "";
-  position: absolute;
-  top: 6px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 4px;
-  height: 8px;
-  background: var(--color-gold);
-  border-radius: 2px;
-  animation: scrollBounce 1.7s ease-in-out infinite;
-}
-
-@keyframes scrollBounce {
-
-  0%,
-  100% {
-    transform: translateX(-50%) translateY(0);
-    opacity: 1;
-  }
-
-  50% {
-    transform: translateX(-50%) translateY(12px);
-    opacity: 0.35;
-  }
-}
-
 /* ---- SHARED SECTION ---- */
 .section {
   padding: 100px 0;
