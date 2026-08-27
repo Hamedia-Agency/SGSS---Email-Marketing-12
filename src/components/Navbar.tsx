@@ -17,7 +17,7 @@ export function Navbar() {
         </Link>
         <ul className={styles.navLinks}>
           <li>
-            <Link href="https://secureguardservices.com/" className={styles.navCta} id="nav-cta">
+            <Link href="https://www.secureguardservices.com/contact" className={styles.navCta} id="nav-cta">
               Get A Quote
             </Link>
           </li>

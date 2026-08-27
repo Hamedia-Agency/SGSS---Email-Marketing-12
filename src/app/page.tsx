@@ -44,7 +44,7 @@ export default function HomePage() {
             </p>
             <div className={styles.heroCtas}>
               <a 
-                href="#prefooter-cta" 
+                href="https://www.secureguardservices.com/service" 
                 className={styles.btnPrimary} 
                 id="hero-cta-primary"
               >

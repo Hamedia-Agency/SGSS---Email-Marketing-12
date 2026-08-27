@@ -30,7 +30,7 @@ const items = [
   {
     title: "Mobile Patrol",
     desc: "Mobile patrol extends physical security coverage across larger properties or locations that may not require a full-time officer. Patrol personnel can perform scheduled or randomized checks, investigate concerns, respond to verified activity, and provide an additional physical layer of protection.",
-    imgSrc: "https://cms.secureguardservices.com/wp-content/uploads/2019/05/vehicle-security-2.png"
+    imgSrc: "https://cms.secureguardservices.com/wp-content/uploads/2026/08/8237FADA-FD1E-4642-B1AB-83A7F0D65F1F-scaled.webp"
   },
   {
     title: "SecureTrack",
