@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Secure Guard | Active 24/7 Hybrid Security & Incident Response",
   description:
-    "Don't just detect threats—stop them. Secure Guard unifies advanced AI video surveillance with 24/7 active human verification, real-time audio deterrence, and rapid incident response.",
+    "Secure Guard unifies AI video surveillance with 24/7 active human verification, live deterrence, and rapid incident response to stop threats.",
   keywords: [
     "Hybrid Security",
     "Video Surveillance",

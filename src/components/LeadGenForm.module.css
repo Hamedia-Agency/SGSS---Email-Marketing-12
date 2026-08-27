@@ -1,30 +1,33 @@
 .formCard {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
   background: var(--color-white);
-  border-radius: var(--radius-lg);
-  padding: 36px;
+  padding: 40px 36px;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(29, 44, 72, 0.12);
   box-shadow: var(--shadow-xl);
-  border: 1px solid rgba(29, 44, 72, 0.1);
-  position: relative;
 }
 
 .headerArea {
-  margin-bottom: 24px;
-  text-align: left;
+  text-align: center;
+  margin-bottom: 28px;
 }
 
 .badge {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 11px;
+  background: rgba(254, 207, 49, 0.2);
+  border: 1px solid rgba(254, 207, 49, 0.5);
+  color: var(--color-dark-blue);
+  font-size: 12px;
   font-weight: 800;
+  padding: 6px 14px;
+  border-radius: 100px;
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  color: var(--color-dark-blue);
-  background: rgba(254, 207, 49, 0.25);
-  padding: 4px 10px;
-  border-radius: 100px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .badgeIcon {
@@ -32,157 +35,169 @@
 }
 
 .title {
-  font-size: 1.5rem;
-  font-weight: 800;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 900;
   color: var(--color-dark-blue);
   line-height: 1.25;
-  letter-spacing: -0.3px;
+  letter-spacing: -0.5px;
+  margin-bottom: 10px;
 }
 
 .divider {
   height: 3px;
-  width: 40px;
+  width: 60px;
   background: var(--color-gold);
-  margin: 12px 0;
+  margin: 0 auto 14px;
   border-radius: 2px;
 }
 
 .subtitle {
-  font-size: 0.9rem;
-  color: var(--color-dark);
-  line-height: 1.5;
-  opacity: 0.85;
+  font-size: 14px;
+  color: var(--color-gray);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
+/* Form Layout */
 .form {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 18px;
 }
 
 .row2Col {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 16px;
 }
 
-@media (max-width: 640px) {
+@media (min-width: 540px) {
   .row2Col {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 .fieldGroup {
   display: flex;
   flex-direction: column;
-  gap: 6px;
 }
 
 .label {
+  display: block;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--color-dark-blue);
+  margin-bottom: 6px;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
 }
 
 .input,
 .select,
 .textarea {
   width: 100%;
-  padding: 12px 14px;
+  background: var(--color-bg-section);
+  border: 1px solid var(--color-gray-light);
+  border-radius: var(--radius-md);
+  padding: 13px 16px;
   font-size: 14px;
   font-family: var(--font-sans);
   color: var(--color-dark);
-  background: #fcfdfe;
-  border: 1px solid var(--color-gray-light);
-  border-radius: var(--radius-sm);
-  transition: border-color var(--transition), box-shadow var(--transition);
+  transition: all var(--transition);
 }
 
 .input:focus,
 .select:focus,
 .textarea:focus {
   outline: none;
+  background: var(--color-white);
   border-color: var(--color-dark-blue);
-  box-shadow: 0 0 0 3px rgba(29, 44, 72, 0.1);
-  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(254, 207, 49, 0.4);
 }
 
 .textarea {
-  resize: vertical;
+  resize: none;
+  min-height: 100px;
 }
 
+/* Checkbox Terms */
 .termsGroup {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
+  gap: 12px;
   margin-top: 4px;
 }
 
 .checkbox {
-  margin-top: 3px;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
   accent-color: var(--color-dark-blue);
-  width: 16px;
-  height: 16px;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .termsText {
   font-size: 11px;
-  color: var(--color-dark);
-  line-height: 1.4;
-  opacity: 0.8;
+  color: var(--color-gray);
+  line-height: 1.5;
+  cursor: pointer;
 }
 
 .privacyLink {
   color: var(--color-dark-blue);
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: underline;
 }
 
+/* Submit Button */
 .submitBtn {
-  display: inline-flex;
+  width: 100%;
+  background: var(--color-gold);
+  color: var(--color-dark-blue);
+  font-size: 15px;
+  font-weight: 900;
+  padding: 16px 24px;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  width: 100%;
-  padding: 15px 24px;
-  font-size: 15px;
-  font-weight: 800;
-  color: var(--color-dark-blue);
-  background: var(--color-gold);
-  border: none;
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  gap: 10px;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition);
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
 .submitBtn:hover {
   background: var(--color-gold-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(254, 207, 49, 0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(254, 207, 49, 0.4);
 }
 
-/* Success Card */
+/* Success State */
 .successCard {
-  background: #ffffff;
-  border-radius: var(--radius-lg);
-  padding: 48px 32px;
-  text-align: center;
+  width: 100%;
+  max-width: 580px;
+  margin: 0 auto;
+  background: var(--color-white);
+  padding: 48px 36px;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(29, 44, 72, 0.12);
   box-shadow: var(--shadow-xl);
-  border: 1px solid rgba(22, 163, 74, 0.2);
+  text-align: center;
 }
 
 .successIconCircle {
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: #dcfce7;
-  color: #16a34a;
+  background: rgba(254, 207, 49, 0.2);
+  color: var(--color-dark-blue);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -190,29 +205,31 @@
 }
 
 .successTitle {
-  font-size: 1.5rem;
-  font-weight: 800;
+  font-size: 1.75rem;
+  font-weight: 900;
   color: var(--color-dark-blue);
   margin-bottom: 12px;
 }
 
 .successDesc {
-  font-size: 0.95rem;
+  font-size: 15px;
   color: var(--color-dark);
-  line-height: 1.6;
-  margin-bottom: 24px;
+  line-height: 1.65;
+  margin-bottom: 28px;
 }
 
 .resetBtn {
   background: var(--color-dark-blue);
   color: var(--color-white);
+  font-weight: 800;
   font-size: 13px;
-  font-weight: 700;
-  padding: 10px 20px;
-  border-radius: var(--radius-sm);
+  padding: 12px 28px;
+  border-radius: var(--radius-md);
   border: none;
   cursor: pointer;
   transition: background var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .resetBtn:hover {

@@ -30,6 +30,7 @@ export default function BackToTop() {
     };
 
     window.addEventListener("scroll", handleScroll);
+    // Initial check in case user is already scrolled down on load
     handleScroll();
     
     return () => window.removeEventListener("scroll", handleScroll);
@@ -48,7 +49,7 @@ export default function BackToTop() {
       onClick={scrollToTop}
       aria-label="Scroll to top"
       style={{
-        background: `conic-gradient(var(--color-gold) ${scrollProgress}%, var(--color-gray-light) ${scrollProgress}%)`,
+        background: `conic-gradient(var(--color-dark-blue) ${scrollProgress}%, var(--color-gray-light) ${scrollProgress}%)`,
       }}
     >
       <div className={styles.innerCircle}>

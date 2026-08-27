@@ -2,8 +2,6 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import styles from "./LeadGenForm.module.css";
-import { Shield, CheckCircle, Send } from "lucide-react";
 
 interface LeadGenFormProps {
   hideHeader?: boolean;
@@ -13,198 +11,144 @@ interface LeadGenFormProps {
   buttonText?: string;
 }
 
-export function LeadGenForm({
-  hideHeader = false,
-  className = "",
-  title = "Request a Hybrid Security Audit",
-  subtitle = "Tell us a little about your property and current concerns. A member of our team will contact you with a customized hybrid security review.",
-  buttonText = "Request a Hybrid Security Audit",
+export function LeadGenForm({ 
+  hideHeader = false, 
+  className = "", 
+  title = "Start Transforming Your Logistics Landscape",
+  subtitle,
+  buttonText = "Submit"
 }: LeadGenFormProps) {
   const [formData, setFormData] = useState({
-    name: "",
-    companyName: "",
+    firstName: "",
+    lastName: "",
     email: "",
     phone: "",
-    propertyType: "",
+    businessName: "",
     city: "",
-    concern: "",
-    agreed: false,
+    message: "",
+    agreed: false
   });
 
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value, type } = e.target;
-    setFormData((prev) => ({
+    setFormData(prev => ({
       ...prev,
-      [name]: type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
+      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
     }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Secure Guard Audit Request Submitted:", formData);
-    setSubmitted(true);
+    console.log("Form submitted:", formData);
+    // In a real app, you would send this to your backend or GHL endpoint
+    alert("Thank you! Your request has been sent.");
   };
 
-  if (submitted) {
-    return (
-      <div className={`${styles.successCard} ${className}`}>
-        <div className={styles.successIconCircle}>
-          <CheckCircle size={36} />
-        </div>
-        <h3 className={styles.successTitle}>Audit Request Received!</h3>
-        <p className={styles.successDesc}>
-          Thank you, <strong>{formData.name}</strong>. Our security operations team has received your information for <strong>{formData.companyName || "your property"}</strong>. We will reach out shortly to schedule your Hybrid Security Audit.
-        </p>
-        <button
-          onClick={() => setSubmitted(false)}
-          className={styles.resetBtn}
-        >
-          Submit Another Request
-        </button>
-      </div>
-    );
-  }
-
   return (
-    <div className={`${styles.formCard} ${className}`}>
+    <div className={`w-full mx-auto ${className}`}>
       {!hideHeader && (
-        <div className={styles.headerArea}>
-          <div className={styles.badge}>
-            <Shield size={14} className={styles.badgeIcon} />
-            Hybrid Audit Request
-          </div>
-          <h2 className={styles.title}>
+        <div className="text-center mb-6">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-[#0fa1db] mb-2 leading-tight tracking-tight">
             {title}
           </h2>
-          <div className={styles.divider} />
-          <p className={styles.subtitle}>
-            {subtitle}
-          </p>
+          {subtitle && (
+            <p className="text-sm text-gray-600 mb-4 px-4">{subtitle}</p>
+          )}
+          <div className="h-[2px] bg-black w-24 mx-auto rounded-full opacity-20"></div>
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className={styles.form}>
-        {/* Row 1: Name & Company */}
-        <div className={styles.row2Col}>
-          <div className={styles.fieldGroup}>
-            <label className={styles.label}>
-              Full Name *
-            </label>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        {/* Row 1: First Name & Last Name */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
             <input
               type="text"
-              name="name"
-              placeholder="e.g. John Doe"
+              name="firstName"
+              placeholder="First Name"
               required
-              value={formData.name}
+              value={formData.firstName}
               onChange={handleChange}
-              className={styles.input}
+              className="w-full bg-[#f8fbfe] border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#0fa1db] transition-all"
             />
           </div>
-          <div className={styles.fieldGroup}>
-            <label className={styles.label}>
-              Company / Property Name *
-            </label>
+          <div>
             <input
               type="text"
-              name="companyName"
-              placeholder="e.g. Apex Commercial Plaza"
+              name="lastName"
+              placeholder="Last Name"
               required
-              value={formData.companyName}
+              value={formData.lastName}
               onChange={handleChange}
-              className={styles.input}
+              className="w-full bg-[#f8fbfe] border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#0fa1db] transition-all"
             />
           </div>
         </div>
 
         {/* Row 2: Email & Phone */}
-        <div className={styles.row2Col}>
-          <div className={styles.fieldGroup}>
-            <label className={styles.label}>
-              Business Email *
-            </label>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
             <input
               type="email"
               name="email"
-              placeholder="name@company.com"
+              placeholder="Email*"
               required
               value={formData.email}
               onChange={handleChange}
-              className={styles.input}
+              className="w-full bg-[#f8fbfe] border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#0fa1db] transition-all"
             />
           </div>
-          <div className={styles.fieldGroup}>
-            <label className={styles.label}>
-              Phone Number *
-            </label>
+          <div>
             <input
               type="tel"
               name="phone"
-              placeholder="(555) 000-0000"
+              placeholder="Phone*"
               required
               value={formData.phone}
               onChange={handleChange}
-              className={styles.input}
+              className="w-full bg-[#f8fbfe] border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#0fa1db] transition-all"
             />
           </div>
         </div>
 
-        {/* Row 3: Property Type & City */}
-        <div className={styles.row2Col}>
-          <div className={styles.fieldGroup}>
-            <label className={styles.label}>
-              Property Type
-            </label>
-            <select
-              name="propertyType"
-              value={formData.propertyType}
+        {/* Row 3: Business Name & City */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <input
+              type="text"
+              name="businessName"
+              placeholder="Business Name"
+              value={formData.businessName}
               onChange={handleChange}
-              className={styles.select}
-            >
-              <option value="">Select Property Type...</option>
-              <option value="Commercial Office / Plaza">Commercial Office / Plaza</option>
-              <option value="Construction Site">Construction Site</option>
-              <option value="Retail & Shopping Center">Retail & Shopping Center</option>
-              <option value="Industrial / Warehouse">Industrial / Warehouse</option>
-              <option value="Residential HOA / Apartment">Residential HOA / Apartment</option>
-              <option value="Other">Other Property</option>
-            </select>
+              className="w-full bg-[#f8fbfe] border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#0fa1db] transition-all"
+            />
           </div>
-          <div className={styles.fieldGroup}>
-            <label className={styles.label}>
-              City / Location
-            </label>
+          <div>
             <input
               type="text"
               name="city"
-              placeholder="e.g. Los Angeles, Irvine, San Diego"
+              placeholder="City"
               value={formData.city}
               onChange={handleChange}
-              className={styles.input}
+              className="w-full bg-[#f8fbfe] border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#0fa1db] transition-all"
             />
           </div>
         </div>
 
-        {/* Row 4: Concern */}
-        <div className={styles.fieldGroup}>
-          <label className={styles.label}>
-            Current Security Concern or Objectives
-          </label>
+        {/* Row 4: Message */}
+        <div>
           <textarea
-            name="concern"
-            placeholder="Tell us about your property's security challenges or current camera setup..."
-            rows={3}
-            value={formData.concern}
+            name="message"
+            placeholder="Please describe your needs"
+            rows={4}
+            value={formData.message}
             onChange={handleChange}
-            className={styles.textarea}
+            className="w-full bg-[#f8fbfe] border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#0fa1db] transition-all resize-none"
           ></textarea>
         </div>
 
         {/* Row 5: Terms */}
-        <div className={styles.termsGroup}>
+        <div className="flex items-start gap-3">
           <input
             type="checkbox"
             name="agreed"
@@ -212,19 +156,18 @@ export function LeadGenForm({
             required
             checked={formData.agreed}
             onChange={handleChange}
-            className={styles.checkbox}
+            className="mt-1 w-4 h-4 text-[#0fa1db] border-gray-300 rounded focus:ring-[#0fa1db]"
           />
-          <label htmlFor="agreed" className={styles.termsText}>
-            I agree to the <Link href="#privacy" className={styles.privacyLink}>privacy terms</Link>. By submitting, I authorize Secure Guard to contact me regarding hybrid security audits.
+          <label htmlFor="agreed" className="text-[10px] text-gray-500 leading-tight">
+            I agree to <Link href="/terms" className="text-[#0fa1db] underline">terms & conditions</Link> provided by the company. By providing my phone number, I agree to receive text messages from the business.
           </label>
         </div>
 
-        {/* Row 6: Submit Button */}
+        {/* Row 6: Submit */}
         <button
           type="submit"
-          className={styles.submitBtn}
+          className="w-full bg-[#0fa1db] hover:bg-[#0284c7] text-white font-bold py-3 rounded-lg shadow-lg transition-all text-sm uppercase tracking-wider"
         >
-          <Send size={18} />
           {buttonText}
         </button>
       </form>

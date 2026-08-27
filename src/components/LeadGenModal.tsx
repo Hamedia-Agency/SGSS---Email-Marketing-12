@@ -15,11 +15,10 @@ interface LeadGenModalProps {
 export function LeadGenModal({
   isOpen,
   onClose,
-  title = "Request a Hybrid Security Audit",
-  subtitle = "Transform passive surveillance into an active response system. Fill out the details below to speak with a Secure Guard specialist.",
-  buttonText = "Request a Hybrid Security Audit",
+  title = "See How Active Video Monitoring Works at Your Property",
+  subtitle = "Stop recording history after damage occurs. Fill out the details below to speak with an SGSS active video monitoring specialist.",
+  buttonText = "Schedule Your Free Consultation",
 }: LeadGenModalProps) {
-  // Lock background scroll when modal is active
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
